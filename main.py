@@ -6,7 +6,7 @@ def Json(Input , Name):
   Info = json.loads(requests.get(Input).text)[Name]
   return Info
 
-Server = Flask("4GAGAGA")
+Server = Flask("RoFind")
 
 @Server.route("/<method>/<input>")
 def Index(method, input):
