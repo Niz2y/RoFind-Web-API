@@ -3,8 +3,9 @@ from flask import Flask, jsonify
 from threading import Thread as Threads
 
 def Json(Input , Name):
-  Info = json.loads(requests.get(Input).text)[Name]
-  return Info
+  with requests.Session() as Session:
+    Info = json.loads(Session.get(Input).text)[Name]
+    return Info
 
 Server = Flask("RoFind")
 
